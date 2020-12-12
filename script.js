@@ -83,6 +83,8 @@ function salarySummer() {
         totalMonthly = totalMonthly + employeeList[i].salaryAnnual;
     }
     console.log('the current total salary is', totalMonthly);
+    $('#salaryDisplay').empty();
+    $('#salaryDisplay').append(totalMonthly);
 }
 
 console.log('end script')
