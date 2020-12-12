@@ -26,6 +26,7 @@ $(document).ready(handleReady);
 function handleReady() {
     console.log('jq loaded');
     $('#submitEmployeeButton').on('click', employeeSubmit);
+    $('tbody').on('click', '.delete-button', deleteRow)
 };
 
 function employeeSubmit() {
@@ -47,11 +48,16 @@ function employeeSubmit() {
     <td>${newEmployee.iDNum}</td>
     <td>${newEmployee.empTitle}</td>
     <td>${newEmployee.salaryAnnual}</td>
-    <td><button>Delete</button></td>
+    <td><button class="delete-button">Delete</button></td>
     </tr>`)
     };
     clearInputs();
     salarySummer();
+}
+
+function deleteRow() {
+    console.log('clicked a delete button');
+    $(this).parent().parent().empty();
 }
 
 function canIRun() {
