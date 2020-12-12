@@ -45,15 +45,11 @@ function employeeSubmit() {
     <td><button>Delete</button></td>
     </tr>`)
     };
+    clearInputs()
 }
 
 function canIRun() {
     console.log('checking complete fields');
-    $('#firstNameInput').val('');
-    $('#lastNameInput').val('');
-    $('#iDInput').val('');
-    $('#titleInput').val('');
-    $('#salaryInput').val('');
     if ($('#firstNameInput').val() && $('#lastNameInput').val() && $('#iDInput').val() && $('#titleInput').val() && $('#salaryInput').val()) {
         console.log('all fields completed');
         return true;
@@ -65,5 +61,14 @@ function canIRun() {
     }
 }
 
+function clearInputs () {
+    console.log('clearing inputs');
+    $('#firstNameInput').val('');
+    $('#lastNameInput').val('');
+    $('#iDInput').val('');
+    $('#titleInput').val('');
+    $('#salaryInput').val('');
+    $('#errorDisplay').empty();
+}
 
 console.log('end script')
