@@ -19,12 +19,11 @@ let employeeList = [
 
 let totalMonthly = 0;
 
-salarySummer();
-
 $(document).ready(handleReady);
 
 function handleReady() {
     console.log('jq loaded');
+    salarySummer();
     $('#submitEmployeeButton').on('click', employeeSubmit);
     $('tbody').on('click', '.delete-button', deleteRow)
 };
@@ -43,7 +42,7 @@ function employeeSubmit() {
         employeeList.push(newEmployee)
         $('tbody').append(`
     <tr>
-    <td scope="row">${newEmployee.nameFirst}</td>
+    <td scope="row" class="varGetter">${newEmployee.nameFirst}</td>
     <td>${newEmployee.nameLast}</td>
     <td>${newEmployee.iDNum}</td>
     <td>${newEmployee.empTitle}</td>
@@ -57,7 +56,15 @@ function employeeSubmit() {
 
 function deleteRow() {
     console.log('clicked a delete button');
+    console.log('looking for ID',$(this).parent().prev().prev().prev().text())
+    let searchVar = $(this).parent().prev().prev().prev().text();
+    for (let i=0; i < employeeList.length; i++) {
+        if (employeeList[i].iDNum == searchVar) {
+            employeeList.splice(i,1);
+        }
+    }
     $(this).parent().parent().empty();
+    salarySummer();
 }
 
 function canIRun() {
