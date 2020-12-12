@@ -1,5 +1,6 @@
 console.log('js loaded');
 
+//created array of employees including example employees hard coded in index.html file
 let employeeList = [
     {
         nameFirst: 'John',
@@ -17,11 +18,12 @@ let employeeList = [
     }
 ];
 
-let totalMonthly = 0;
-
+//creating monthly expense variable
+let totalMonthly;
 
 $(document).ready(handleReady);
 
+//handle ready runs salary calculator and tracks clicks of submit button and delete buttons
 function handleReady() {
     console.log('jq loaded');
     salarySummer();
@@ -29,6 +31,7 @@ function handleReady() {
     $('tbody').on('click', '.delete-button', deleteRow)
 };
 
+//adds new employees to array & pushes to DOM
 function employeeSubmit() {
     console.log('clicked submit button');
     if (canIRun()) {
@@ -55,6 +58,7 @@ function employeeSubmit() {
     salarySummer();
 }
 
+//removes employees from DOM & array
 function deleteRow() {
     console.log('clicked a delete button');
     console.log('looking for ID',$(this).parent().prev().prev().prev().text())
@@ -68,6 +72,7 @@ function deleteRow() {
     salarySummer();
 }
 
+//checks to make sure all fields are complete before employees can be added to array & DOM
 function canIRun() {
     console.log('checking complete fields');
     if ($('#firstNameInput').val() && $('#lastNameInput').val() && $('#iDInput').val() && $('#titleInput').val() && $('#salaryInput').val()) {
@@ -81,6 +86,7 @@ function canIRun() {
     }
 }
 
+//clears input fields after click
 function clearInputs() {
     console.log('clearing inputs');
     $('#firstNameInput').val('');
@@ -91,6 +97,7 @@ function clearInputs() {
     $('#errorDisplay').empty();
 }
 
+//calculates monthly salary expenses & displays whole number total to DOM
 function salarySummer() {
     totalMonthly = 0;
     for (let i = 0; i < employeeList.length; i++) {
