@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,26 +10,60 @@
     <script src="script.js"></script>
     <title>JQuery Salary Calculator</title>
 </head>
+
 <body class="container">
     <h1 class="jumbotron text-center">Salary Calculator</h1>
     <div>
         <h3>Add Employee</h3>
-        <input type="text" placeholder="First Name" />
-        <input type="text" placeholder="Last Name" />
-        <input type="number" placeholder="ID" />
-        <input type="text" placeholder="Title" />
-        <input type="number" placeholder="Annual Salary" />
-        <button>Submit</button>
+        <div class="input-group">
+            <span class="input-group-text">First Name | Last Name</span>
+            <input type="text" aria-label="First name" class="form-control">
+            <input type="text" aria-label="Last name" class="form-control">
+        </div>
+        <div class="input-group">
+            <span class="input-group-text">ID | Title | Salary</span>
+            <input type="number" placeholder="ID" class="form-control" />
+            <input type="text" placeholder="Title" class="form-control" />
+            <input type="number" placeholder="Annual Salary" class="form-control" />
+        </div>
+        <br>
+        <button class="btn btn-primary">Submit</button>
     </div>
+    <br>
+    <h3>Employees</h3>
     <div>
         <table class="table">
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Annual Salary</th>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Annual Salary</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>John</th>
+                    <th>Doe</th>
+                    <th>1234</th>
+                    <th>Senior Junior</th>
+                    <th>45000</th>
+                    <th><button>Delete</button></th>
+                </tr>
+                <tr>
+                    <th>Jane</th>
+                    <th>Smith</th>
+                    <th>5678</th>
+                    <th>Junior Senior</th>
+                    <th>75000</th>
+                    <th><button>Delete</button></th>
+                </tr>
+            </tbody>
         </table>
     </div>
     <h5>Total Monthly:</h3>
 </body>
+
 </html>
