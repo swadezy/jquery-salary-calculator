@@ -4,3 +4,19 @@
     background-color: #e9ecef;
     border-radius: .3rem;
   }
+
+body {
+    font-family: "Tahoma", sans-serif;
+}
+
+h1 {
+    color: #545454;
+}
+
+h3 {
+    color: #545454;
+}
+
+h5 {
+    color: #545454
+}
