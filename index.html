@@ -17,17 +17,18 @@
         <h3>Add Employee</h3>
         <div class="input-group">
             <span class="input-group-text">First Name | Last Name</span>
-            <input type="text" aria-label="First name" class="form-control">
-            <input type="text" aria-label="Last name" class="form-control">
+            <input type="text" aria-label="First name" class="form-control" id="firstNameInput" />
+            <input type="text" aria-label="Last name" class="form-control" id="lastNameInput" />
         </div>
         <div class="input-group">
             <span class="input-group-text">ID | Title | Salary</span>
-            <input type="number" placeholder="ID" class="form-control" />
-            <input type="text" placeholder="Title" class="form-control" />
-            <input type="number" placeholder="Annual Salary" class="form-control" />
+            <input type="number" placeholder="ID" class="form-control" id="iDInput" />
+            <input type="text" placeholder="Title" class="form-control" id="titleInput" />
+            <input type="number" placeholder="Annual Salary" class="form-control" id="salaryInput" />
         </div>
         <br>
-        <button class="btn btn-primary">Submit</button>
+        <button class="btn btn-primary" id="submitEmployeeButton">Submit</button>
+        <div id="errorDisplay"></div>
     </div>
     <br>
     <h3>Employees</h3>
