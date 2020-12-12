@@ -17,6 +17,10 @@ let employeeList = [
     }
 ];
 
+let totalMonthly = 0;
+
+salarySummer();
+
 $(document).ready(handleReady);
 
 function handleReady() {
@@ -30,11 +34,12 @@ function employeeSubmit() {
         let newEmployee = {
             nameFirst: $('#firstNameInput').val(),
             nameLast: $('#lastNameInput').val(),
-            iDNum: $('#iDInput').val(),
+            iDNum: Number($('#iDInput').val()),
             empTitle: $('#titleInput').val(),
-            salaryAnnual: $('#salaryInput').val(),
+            salaryAnnual: Number($('#salaryInput').val()),
         };
         console.log('added:', newEmployee);
+        employeeList.push(newEmployee)
         $('tbody').append(`
     <tr>
     <td scope="row">${newEmployee.nameFirst}</td>
@@ -45,7 +50,8 @@ function employeeSubmit() {
     <td><button>Delete</button></td>
     </tr>`)
     };
-    clearInputs()
+    clearInputs();
+    salarySummer();
 }
 
 function canIRun() {
@@ -61,7 +67,7 @@ function canIRun() {
     }
 }
 
-function clearInputs () {
+function clearInputs() {
     console.log('clearing inputs');
     $('#firstNameInput').val('');
     $('#lastNameInput').val('');
@@ -69,6 +75,14 @@ function clearInputs () {
     $('#titleInput').val('');
     $('#salaryInput').val('');
     $('#errorDisplay').empty();
+}
+
+function salarySummer() {
+    totalMonthly = 0;
+    for (let i = 0; i < employeeList.length; i++) {
+        totalMonthly = totalMonthly + employeeList[i].salaryAnnual;
+    }
+    console.log('the current total salary is', totalMonthly);
 }
 
 console.log('end script')
