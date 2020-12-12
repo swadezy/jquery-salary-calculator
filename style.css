@@ -18,7 +18,8 @@ h3 {
 }
 
 h5 {
-    color: #545454
+    color: #545454;
+    text-align: right;
 }
 
 .clear {
