@@ -19,6 +19,7 @@ let employeeList = [
 
 let totalMonthly = 0;
 
+
 $(document).ready(handleReady);
 
 function handleReady() {
@@ -96,8 +97,11 @@ function salarySummer() {
         totalMonthly = totalMonthly + employeeList[i].salaryAnnual / 12;
     }
     console.log('the current total monthly salary is', totalMonthly);
-    if (totalMonthly > 20000) {
-        $('#salaryDisplay').toggleClass('pricy')
+    if (totalMonthly >= 20000) {
+        $('#salaryDisplay').addClass('pricy')
+    }
+    if (totalMonthly < 20000) {
+        $('#salaryDisplay').removeClass('pricy')
     }
     $('#salaryDisplay').empty();
     $('#salaryDisplay').append(totalMonthly.toFixed(0));
