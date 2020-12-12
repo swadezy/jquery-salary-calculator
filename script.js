@@ -13,7 +13,7 @@ let employeeList = [
         nameLast: 'Smith',
         iDNum: 5678,
         empTitle: 'Junior Senior',
-        salaryAnnual: 75000
+        salaryAnnual: 80000
     }
 ];
 
