@@ -80,11 +80,14 @@ function clearInputs() {
 function salarySummer() {
     totalMonthly = 0;
     for (let i = 0; i < employeeList.length; i++) {
-        totalMonthly = totalMonthly + employeeList[i].salaryAnnual;
+        totalMonthly = totalMonthly + employeeList[i].salaryAnnual / 12;
     }
-    console.log('the current total salary is', totalMonthly);
+    console.log('the current total monthly salary is', totalMonthly);
+    if (totalMonthly > 20000) {
+        $('#salaryDisplay').toggleClass('pricy')
+    }
     $('#salaryDisplay').empty();
-    $('#salaryDisplay').append(totalMonthly);
+    $('#salaryDisplay').append(totalMonthly.toFixed(0));
 }
 
 console.log('end script')
