@@ -76,7 +76,7 @@ function canIRun() {
     }
     else {
         console.log('missing field input(s)');
-        $('#errorDisplay').append('<p>please complete all fields</p>')
+        $('#errorDisplay').append('<p>please complete all fields</p>');
         return false;
     }
 }
