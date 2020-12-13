@@ -43,7 +43,8 @@ function employeeSubmit() {
             salaryAnnual: Number($('#salaryInput').val()),
         };
         console.log('added:', newEmployee);
-        employeeList.push(newEmployee)
+        employeeList.push(newEmployee);
+        clearInputs();
         $('tbody').append(`
     <tr>
     <td scope="row" class="varGetter">${newEmployee.nameFirst}</td>
@@ -54,7 +55,6 @@ function employeeSubmit() {
     <td><button class="delete-button">Delete</button></td>
     </tr>`)
     };
-    clearInputs();
     salarySummer();
 }
 
@@ -75,14 +75,38 @@ function deleteRow() {
 //checks to make sure all fields are complete before employees can be added to array & DOM
 function canIRun() {
     console.log('checking complete fields');
+    $('#firstNameInput').removeClass('makeRed')
+    $('#lastNameInput').removeClass('makeRed')
+    $('#iDInput').removeClass('makeRed')
+    $('#titleInput').removeClass('makeRed')
+    $('#salaryInput').removeClass('makeRed')
     if ($('#firstNameInput').val() && $('#lastNameInput').val() && $('#iDInput').val() && $('#titleInput').val() && $('#salaryInput').val()) {
         console.log('all fields completed');
         return true;
     }
     else {
         console.log('missing field input(s)');
-        $('#errorDisplay').append('<p>please complete all fields</p>');
+        makeRedder();
         return false;
+    }
+}
+
+//gives incomplete input fields red border on submit click
+function makeRedder() {
+    if ($('#firstNameInput').val() == false) {
+        $('#firstNameInput').addClass('makeRed')
+    }
+    if ($('#lastNameInput').val() == false) {
+        $('#lastNameInput').addClass('makeRed')
+    }
+    if ($('#iDInput').val() == false) {
+        $('#iDInput').addClass('makeRed')
+    }
+    if ($('#titleInput').val() == false) {
+        $('#titleInput').addClass('makeRed')
+    }
+    if ($('#salaryInput').val() == false) {
+        $('#salaryInput').addClass('makeRed')
     }
 }
 
