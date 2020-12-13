@@ -14,8 +14,12 @@
 }
 
 .pricy {
-    background-color: red;
+    color: red;
 }
+
+.makeRed{
+    border: 2px solid red !important;
+  }
 
 body {
     font-family: "Tahoma", sans-serif;

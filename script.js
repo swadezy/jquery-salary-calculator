@@ -111,7 +111,7 @@ function salarySummer() {
         $('#salaryDisplay').removeClass('pricy')
     }
     $('#salaryDisplay').empty();
-    $('#salaryDisplay').addClass('dollars')
+    $('#salaryDisplay').addClass('dollars');
     $('#salaryDisplay').append(totalMonthly.toFixed(0));
 }
 
