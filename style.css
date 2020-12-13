@@ -9,6 +9,10 @@
     display: inline-block;
 }
 
+.dollars:before {
+    content: "$";
+}
+
 .pricy {
     background-color: red;
 }

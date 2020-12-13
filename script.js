@@ -50,7 +50,7 @@ function employeeSubmit() {
     <td>${newEmployee.nameLast}</td>
     <td>${newEmployee.iDNum}</td>
     <td>${newEmployee.empTitle}</td>
-    <td>${newEmployee.salaryAnnual}</td>
+    <td class="dollars">${newEmployee.salaryAnnual}</td>
     <td><button class="delete-button">Delete</button></td>
     </tr>`)
     };
@@ -111,6 +111,7 @@ function salarySummer() {
         $('#salaryDisplay').removeClass('pricy')
     }
     $('#salaryDisplay').empty();
+    $('#salaryDisplay').addClass('dollars')
     $('#salaryDisplay').append(totalMonthly.toFixed(0));
 }
 
