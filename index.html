@@ -13,24 +13,28 @@
 
 <body class="container">
     <h1 class="jumbotron text-center">Salary Calculator</h1>
+    <div id="top-box" class="container">
         <h3>Add Employee</h3>
         <div class="input-group">
             <span class="input-group-text">First Name | Last Name</span>
             <input type="text" placeholder="First Name" class="form-control" id="firstNameInput" />
             <input type="text" placeholder="Last Name" class="form-control" id="lastNameInput" />
         </div>
+        <div id="half-break"></div>
         <div class="input-group">
             <span class="input-group-text">ID | Title | Salary</span>
             <input type="number" placeholder="ID" class="form-control" id="iDInput" />
             <input type="text" placeholder="Title" class="form-control" id="titleInput" />
             <input type="number" placeholder="Annual Salary" class="form-control" id="salaryInput" />
         </div>
-        <br>
+        <div id="half-break"></div>
         <button class="btn btn-primary" id="submitEmployeeButton">Submit</button>
+    </div>
+    <br>
     <br>
     <h3>Employees</h3>
     <div>
-        <table class="table table-striped">
+        <table class="table table-striped table-hover table-bordered">
             <thead>
                 <tr>
                     <th scope="col">First Name</th>
@@ -48,7 +52,7 @@
                     <td>1234</td>
                     <td>Senior Junior</td>
                     <td class="dollars">45000</td>
-                    <td><button class="delete-button">Delete</button></td>
+                    <td><button class="delete-button btn btn-outline-dark btn-sm">Delete</button></td>
                 </tr>
                 <tr>
                     <td scope="row" class="varGetter">Jane</td>
@@ -56,13 +60,23 @@
                     <td>5678</td>
                     <td>Junior Senior</td>
                     <td class="dollars">80000</td>
-                    <td><button class="delete-button">Delete</button></td>
+                    <td><button class="delete-button btn btn-outline-dark btn-sm">Delete</button></td>
                 </tr>
             </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total Monthly Salary Expenses</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td id="salaryDisplay"></td>
+                    <td></td>
+                </tr>
+            </tfoot>
         </table>
     </div>
-    <h5 class="inliners">Total Monthly Salary Expenses :</h5>
-    <h5 class="inliners" id="salaryDisplay"></h5>
+    <!-- <h5 class="inliners">Total Monthly Salary Expenses :</h5>
+    <h5 class="inliners" id="salaryDisplay"></h5> -->
 </body>
 
 </html>

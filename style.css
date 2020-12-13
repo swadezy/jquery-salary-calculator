@@ -19,7 +19,21 @@
 
 .makeRed{
     border: 2px solid red !important;
-  }
+}
+
+#half-break {
+    padding: 5px;
+}
+
+#top-box {
+    padding: 20px;
+    border: solid #949494 3px;
+    border-radius: 20px;
+}
+
+tfoot {
+    font-weight: bold;
+}
 
 body {
     font-family: "Tahoma", sans-serif;
